@@ -22,9 +22,22 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown(
+    """
+    <style>
+    [data-testid="stMetricValue"] {
+        font-size: 2rem;
+        line-height: 1.15;
+        white-space: nowrap;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 def money(value: float) -> str:
-    return f"GBP {value:,.2f}"
+    return f"GBP {value:,.0f}"
 
 
 def month_filename_part(month: str) -> str:
